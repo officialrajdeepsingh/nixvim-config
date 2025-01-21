@@ -42,6 +42,7 @@ And then I have a `packages.nix` file that contains:
 { inputs, pkgs, ... }:
 {
   home.packages = with pkgs; [
+
     ...
     inputs.nixvim.packages.${pkgs.system}.default
   ];
@@ -49,3 +50,4 @@ And then I have a `packages.nix` file that contains:
 ```
 
 Or you can always [take a look yourself](https://github.com/officialrajdeepsingh/nixos-config)
+/* https://github.com/Ahwxorg/nixvim-config */
