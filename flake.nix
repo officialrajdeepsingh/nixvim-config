@@ -2,9 +2,23 @@
   description = "Ahwx' Neovim configuration, declaratively written using Nix";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixvim.url = "github:nix-community/nixvim";
-    flake-parts.url = "github:hercules-ci/flake-parts";
+
+    ## Nixpkgs
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-24.11";
+    };
+
+    ## Flake Parts
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    ## NixVim
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
